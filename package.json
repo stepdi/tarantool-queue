@@ -1,6 +1,6 @@
 {
   "name": "@stepdi/tarantool-queue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper for Tarantool Queue",
   "main": "index.js",
   "scripts": {

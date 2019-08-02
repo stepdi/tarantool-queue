@@ -5,13 +5,16 @@ It accepts Tarantool connection from [tarantool/node-tarantool-driver](https://g
 Module [Queue](https://github.com/tarantool/queue "Queue") for Tarantool is required (if you use [Official Tarantool Docker image](https://hub.docker.com/r/tarantool/tarantool "Official Tarantool Docker image") you already have it, if you do not please install the Queue module - [here is described how](https://www.tarantool.io/en/doc/2.1/book/app_server/installing_module/ "here is described how"))
 To check if you have the Queue module installed run in your **Tarantool console**:
 ```lua
-queue = require('queue')
+Lua> queue = require('queue')
 ```
-
-Sample usage (worker):
+##Install
+```bash
+npm i @stepdi/tarantool-queue
+```
+##Sample usage (worker):
 ```javascript
 import Tarantool from 'tarantool-driver';
-import TarantoolQueue from 'stepdi/tarantool-queue';
+import TarantoolQueue from '@stepdi/tarantool-queue';
 
 async function worker() {
     let conn = new Tarantool({ port: 3301 });
@@ -36,7 +39,9 @@ async function worker() {
 worker();
 ```
 
-Functions supported (please refer to Tarantool Queue module documentation using links in the list). Every function returns a Promise object.
+##Functions supported 
+Please refer to Tarantool Queue module documentation using links in the list. 
+Every function returns a Promise which resolves with data from Tarantool or rejects with error message.
 - [create_tube](https://github.com/tarantool/queue#creating-a-new-queue "create_tube")(type = 'fifo', temporary = true)
 - [drop](https://github.com/tarantool/queue#dropping-a-queue "drop")()
 - [put](https://github.com/tarantool/queue#putting-a-task-in-a-queue "put")(taskData, options)
