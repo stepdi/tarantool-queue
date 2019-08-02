@@ -1,4 +1,4 @@
-export default class {
+class TarantoolQueue {
     constructor(conn, queueName, debug = false) {
         this.conn = conn;
         this.queueName = queueName;
@@ -56,3 +56,5 @@ export default class {
         return this._call('queue.statistics', this.queueName);
     }
 }
+
+module.exports = TarantoolQueue;
