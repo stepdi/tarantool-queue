@@ -7,11 +7,11 @@ To check if you have the Queue module installed run in your **Tarantool console*
 ```lua
 Lua> queue = require('queue')
 ```
-##Install
+## Install
 ```bash
 npm i @stepdi/tarantool-queue
 ```
-##Sample usage (worker):
+## Sample usage (worker):
 ```javascript
 import Tarantool from 'tarantool-driver';
 import TarantoolQueue from '@stepdi/tarantool-queue';
@@ -39,7 +39,7 @@ async function worker() {
 worker();
 ```
 
-##Functions supported 
+## Functions supported 
 Please refer to Tarantool Queue module documentation using links in the list. 
 Every function returns a Promise which resolves with data from Tarantool or rejects with error message.
 - [create_tube](https://github.com/tarantool/queue#creating-a-new-queue "create_tube")(type = 'fifo', temporary = true)
