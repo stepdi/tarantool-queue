@@ -1,0 +1,23 @@
+{
+  "name": "@stepdi/tarantool-queue",
+  "version": "1.0.0",
+  "description": "Wrapper for Tarantool Queue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stepdi/tarantool-queue.git"
+  },
+  "keywords": [
+    "tarantool",
+    "queue"
+  ],
+  "author": "Dmitry Stepanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stepdi/tarantool-queue/issues"
+  },
+  "homepage": "https://github.com/stepdi/tarantool-queue#readme"
+}
