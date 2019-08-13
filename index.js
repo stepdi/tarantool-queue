@@ -17,7 +17,7 @@ class TarantoolQueue {
                 if (typeof p == 'string') return '"' + p + '"';
                 return p; 
             });
-            let query = 'return ' + expression + '(' + paramsPrepared.filter(p => p).join(', ') + ')';
+            let query = 'return ' + expression + '(' + paramsPrepared.filter(p => p !== undefined).join(', ') + ')';
             if (this.debug) console.log(query);
             return await this.conn.eval(query);
         } catch (err) {
