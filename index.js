@@ -1,8 +1,9 @@
 class TarantoolQueue {
-    constructor(conn, queueName, debug = false) {
+    constructor(conn, queueName, debug = false, actionCallback = undefined) {
         this.conn = conn;
         this.queueName = queueName;
         this.debug = debug;
+        this.actionCallback = actionCallback; // useful to write stats
 
         this.conn.eval('queue = require("queue")');
     }
@@ -30,6 +31,9 @@ class TarantoolQueue {
     }
 
     _callForQueue (method, ...parameters) {
+        if (typeof this.actionCallback === 'function') {
+            this.actionCallback(method, ...parameters);
+        }
         return this._call("queue.tube['" + this.queueName + "']:" + method, ...parameters);
     }
 
